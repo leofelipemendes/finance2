@@ -4,7 +4,7 @@ namespace finance;
 
 use Illuminate\Database\Eloquent\Model;
 
-class municipio extends Model {
+class Municipio extends Model {
 
     protected $fillable = [
         'codigo',
@@ -14,5 +14,9 @@ class municipio extends Model {
     ];
     protected $guarded = ['id', 'created_at', 'update_at'];
     protected $table = 'municipios';
+    
+    public function estado() {
+        return $this->belongsTo(Estado::class, 'iduf', 'id');
+    }
 
 }

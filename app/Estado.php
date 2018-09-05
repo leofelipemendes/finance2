@@ -12,4 +12,8 @@ class Estado extends Model
         ];
     protected $guarded = ['id', 'created_at', 'update_at'];
     protected $table = 'estados';
+    
+    public function municipios() {
+        return $this->hasMany(Municipio::class,'iduf','id');
+    }
 }
