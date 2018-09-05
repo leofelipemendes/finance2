@@ -26,7 +26,7 @@ class AddColumnAtivoPlanoContas extends Migration
     public function down()
     {
         Schema::table('plano_contas', function (Blueprint $table) {
-            $table->boolean('ativo')->nullable();
+            $table->dropColumn('ativo');
         });
     }
 }

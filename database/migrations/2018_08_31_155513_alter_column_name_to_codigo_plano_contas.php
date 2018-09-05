@@ -14,7 +14,7 @@ class AlterColumnNameToCodigoPlanoContas extends Migration
     public function up()
     {
         Schema::table('plano_contas', function (Blueprint $table) {
-            $table->renameColumn('nameo', 'codigo');
+            $table->renameColumn('name', 'codigo');
         });
     }
 
