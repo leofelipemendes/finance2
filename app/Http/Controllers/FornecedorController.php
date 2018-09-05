@@ -30,6 +30,25 @@ class FornecedorController extends Controller
     public function store(Request $request)
     {
         $forn = new Fornecedor();
+        $forn->nomefantasia = $request->input('nomefantasia');
+        $forn->razaosocial = $request->input('razaosocial');
+        $forn->cnpj = $request->input('cnpj');
+        $forn->iduf = $request->input('iduf');
+        $forn->idmunicipio = $request->input('idmunicipio');
+        $forn->ie = $request->input('ie');
+        $forn->im = $request->input('im');
+        $forn->matriz = $request->input('matriz');
+        $forn->endereco = $request->input('endereco');
+        $forn->bairro = $request->input('bairro');
+        $forn->numero = $request->input('numero');
+        $forn->complemento = $request->input('complemento');
+        $forn->contato = $request->input('contato');
+        $forn->tel_contato = $request->input('tel_contato');
+        $forn->save();
+        return response()->json([
+            'status'=>'success',
+            'data'=>$forn
+        ]);
         
     }
 
