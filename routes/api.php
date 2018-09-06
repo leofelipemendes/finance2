@@ -24,9 +24,9 @@ Route::group(['middleware' => 'jwt.auth'], function(){
 });
 // --------- end login e auth
 
+Route::resource('departamento','DepartamentoController');
 Route::resource('planocontas','PlanoContasController');
 Route::resource('forn','FornecedorController');
-//Route::put('clientes/{id}','ClientesController@update');
 Route::resource('clientes','ClientesController');
 
 

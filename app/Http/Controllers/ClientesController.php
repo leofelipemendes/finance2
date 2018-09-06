@@ -119,7 +119,7 @@ class ClientesController extends Controller {
             $cliente->delete();
             return response()->json([
                 'status'=>'success',
-                'msg'=>'Cliente apagado'
+                'msg'=>'Cliente removido'
             ]) ;
         } catch (Exception $ex) {
             return response()->json([

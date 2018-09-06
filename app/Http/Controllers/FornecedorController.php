@@ -58,9 +58,21 @@ class FornecedorController extends Controller
      * @param  \finance\Fornecedor  $fornecedor
      * @return \Illuminate\Http\Response
      */
-    public function show(Fornecedor $fornecedor)
+    public function show($id)
     {
-        //
+        
+        $forn = Fornecedor::find($id);
+        if(!empty($forn)){
+            return response()->json([
+            'status'=>'success',
+            'data'=>$forn
+            ]);
+        }
+        return response()->json([
+            'status'=> 'success',
+            'msg'   => 'Fornecedor não encontrado'
+        ]);
+        
     }
 
     /**
@@ -70,9 +82,29 @@ class FornecedorController extends Controller
      * @param  \finance\Fornecedor  $fornecedor
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Fornecedor $fornecedor)
+    public function update(Request $request, $id)
     {
-        //
+        $forn = Fornecedor::find($id);
+        $forn->nomefantasia = $request->input('nomefantasia');
+        $forn->razaosocial = $request->input('razaosocial');
+        $forn->cnpj = $request->input('cnpj');
+        $forn->iduf = $request->input('iduf');
+        $forn->idmunicipio = $request->input('idmunicipio');
+        $forn->ie = $request->input('ie');
+        $forn->im = $request->input('im');
+        $forn->matriz = $request->input('matriz');
+        $forn->endereco = $request->input('endereco');
+        $forn->bairro = $request->input('bairro');
+        $forn->numero = $request->input('numero');
+        $forn->complemento = $request->input('complemento');
+        $forn->contato = $request->input('contato');
+        $forn->tel_contato = $request->input('tel_contato');
+        $forn->save();
+        
+        return response()->json([
+            'status'=>'success',
+            'msg'=>'Fornecedor '.$forn->nomefantasia.' atualizado!'
+        ]);
     }
 
     /**
@@ -81,8 +113,21 @@ class FornecedorController extends Controller
      * @param  \finance\Fornecedor  $fornecedor
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Fornecedor $fornecedor)
+    public function destroy($id)
     {
-        //
+        $forn = Fornecedor::find($id);
+        try{
+            $forn->delete();
+            return response()->json([
+                'status'=>'success',
+                'msg'=>'Fornecedor removido'
+            ]) ;
+        } catch (Exception $ex) {
+            return response()->json([
+                'status'=>'error',
+                'error'=>$ex->getMessage(),
+                'msg'=>'Erro ao deletar cliente'
+            ]) ;
+        }
     }
 }
