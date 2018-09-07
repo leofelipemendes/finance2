@@ -15,7 +15,7 @@ class DepartamentoController extends Controller
     public function index()
     {
         $dept = Departamento::all();
-        if(!$dept->isEmpty()){
+        if($dept->isNotEmpty()){
             return response()->json([
                 'status'=>'success',
                 'data'=>$dept
@@ -23,7 +23,7 @@ class DepartamentoController extends Controller
         }
         return response()->json([
                 'status'=>'success',
-                'msg'=>'Nao ha departamentos.'
+                'msg'=>'Nenhum registro encontrado.'
             ]);
         
         

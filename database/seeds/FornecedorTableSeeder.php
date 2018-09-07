@@ -11,6 +11,6 @@ class FornecedorTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(finance\Fornecedor::class, 20)->create();
+        factory(finance\Fornecedor::class,20)->create();
     }
 }

@@ -15,10 +15,17 @@ class FornecedorController extends Controller
     public function index()
     {
         $forn = Fornecedor::all();
+        if($forn->isNotEmpty()){
+            return response()->json([
+                'status'=>'success',
+                'data'=>$forn
+            ]);
+        }
         return response()->json([
-            'status'=>'success',
-            'data'=>$forn
-        ]);
+                'status'=>'success',
+                'msg'=>'nenhum registro encontrado.'
+            ]);
+        
     }
 
     /**
