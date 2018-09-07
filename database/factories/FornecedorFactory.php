@@ -14,7 +14,7 @@ $factory->define(finance\Fornecedor::class, function (Faker $faker) {
         ,'bairro' => $faker->address
         ,'numero' => $faker->numerify()
         ,'complemento' => $faker->colorName
-        ,'idmunicipio' => 53
+        ,'idmunicipio' => 1
         ,'iduf' => 1
         ,'contato' =>$faker->name
         ,'tel_contato'=>$faker->phoneNumber

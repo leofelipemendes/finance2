@@ -13,11 +13,10 @@ class CreateContaBancariasTable extends Migration
      */
     public function up()
     {
-        Schema::create('conta_bancarias', function (Blueprint $table) {
+        Schema::create('contas_bancarias', function (Blueprint $table) {
             $table->increments('id');
             $table->string('descricao');
             $table->integer('idbanco')->unsigned();
-            //$table->foreign('idbanco')->references('bancos')->on('id');
             $table->integer('agencia');
             $table->integer('dig_ag');
             $table->integer('nr_conta');
@@ -35,6 +34,6 @@ class CreateContaBancariasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('conta_bancarias');
+        Schema::dropIfExists('contas_bancarias');
     }
 }

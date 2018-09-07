@@ -30,5 +30,8 @@ Route::resource('forn','FornecedorController');
 Route::resource('clientes','ClientesController');
 Route::resource('categoria','CategoriaController');
 Route::resource('ccusto','CentroCustoController');
+Route::resource('banco','BancoController');
+Route::resource('cbancaria','ContaBancariaController');
+
 
 

@@ -5,26 +5,25 @@ namespace finance\Http\Controllers;
 use finance\Banco;
 use Illuminate\Http\Request;
 
-class BancoController extends Controller
-{
+class BancoController extends Controller {
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-         $bc = Banco::all();
-        if($bc->isNotEmpty()){
+    public function index() {
+        $bc = Banco::all();
+        if ($bc->isNotEmpty()) {
             return response()->json([
-               'status'=>'success',
-               'data'=>$bc
+                        'status' => 'success',
+                        'data' => $bc
             ]);
         }
         return response()->json([
-               'status'=>'success',
-               'msg'=>'Não há categorias cadastradas.'
-            ]);
+                    'status' => 'success',
+                    'msg' => 'Não há categorias cadastradas.'
+        ]);
     }
 
     /**
@@ -33,23 +32,22 @@ class BancoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
         $bc = new Banco();
+        $bc->codigo = $request->input('codigo');
         $bc->nome = $request->input('nome');
-        $bc->descricao = $request->input('descricao');
-        try{
+        $bc->site = $request->input('site');
+        try {
             $bc->save();
             return response()->json([
-               'status'=>'success',
-               'msg'=>'Banco '.$bc->nome.' salva com sucesso!'
+                        'status' => 'success',
+                        'msg' => 'Banco ' . $bc->nome . ' salva com sucesso!'
             ]);
-            
         } catch (Exception $ex) {
             return response()->json([
-               'status'=>'error',
-               'error'=>$ex->getMessage(),
-               'msg'=>'Erro ao cadastrar categoria.'
+                        'status' => 'error',
+                        'error' => $ex->getMessage(),
+                        'msg' => 'Erro ao cadastrar categoria.'
             ]);
         }
     }
@@ -60,19 +58,18 @@ class BancoController extends Controller
      * @param  \finance\Banco  $banco
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
+    public function show($id) {
         $bc = Banco::find($id);
-        if(!empty($bc)){
+        if (!empty($bc)) {
             return response()->json([
-               'status'=>'success',
-               'data'=>$bc
+                        'status' => 'success',
+                        'data' => $bc
             ]);
         }
         return response()->json([
-               'status'=>'success',
-               'msg'=>'Registro não encontrado.'
-            ]);
+                    'status' => 'success',
+                    'msg' => 'Registro não encontrado.'
+        ]);
     }
 
     /**
@@ -82,30 +79,39 @@ class BancoController extends Controller
      * @param  \finance\Banco  $banco
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id) {
         $bc = Banco::find($id);
-        
-        if(!empty($bc)){
-            $bc->nome = $request->input('nome');
-            $bc->descricao = $request->input('descricao');
-            try{
+
+        if (!empty($bc)) {
+            if($request->input('codigo')){
+                $bc->codigo = $request->input('codigo');
+            }
+            
+            if($request->input('nome')){
+                $bc->nome = $request->input('nome');
+            }
+            
+            if($request->input('site')){
+                $bc->site = $request->input('site');
+            }
+            
+            try {
                 $bc->save();
                 return response()->json([
-                    'status'=>'success',
-                    'msg'=>'Banco '.$bc->nome.' atualizada!'
+                            'status' => 'success',
+                            'msg' => 'Banco ' . $bc->nome . ' atualizada!'
                 ]);
             } catch (Exception $ex) {
                 return response()->json([
-                    'status'=>'error',
-                    'error'=>$ex->getMessage(),
-                    'msg'=>'Erro ao atualizar categoria.'
+                            'status' => 'error',
+                            'error' => $ex->getMessage(),
+                            'msg' => 'Erro ao atualizar categoria.'
                 ]);
             }
         }
         return response()->json([
-            'status'=>'success',
-            'msg'=>'Registro não encontrado'
+                    'status' => 'success',
+                    'msg' => 'Registro não encontrado'
         ]);
     }
 
@@ -115,28 +121,27 @@ class BancoController extends Controller
      * @param  \finance\Banco  $banco
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
+    public function destroy($id) {
         $bc = Banco::find($id);
-        if(!empty($bc)){
-            try{            
-            $bc->delete();
+        if (!empty($bc)) {
+            try {
+                $bc->delete();
                 return response()->json([
-                    'status'=>'success',
-                    'msg'=>'Registro removido.'
+                            'status' => 'success',
+                            'msg' => 'Registro removido.'
                 ]);
             } catch (Exception $ex) {
                 return response()->json([
-                    'status'=>'error',
-                    'msg'=>'Erro ao excluir registro.',
-                    'error'=>$ex->getMessage()
+                            'status' => 'error',
+                            'msg' => 'Erro ao excluir registro.',
+                            'error' => $ex->getMessage()
                 ]);
-
             }
         }
         return response()->json([
-                    'status'=>'success',
-                    'msg'=>'Registro não encontrado.'
-                ]);
+                    'status' => 'success',
+                    'msg' => 'Registro não encontrado.'
+        ]);
     }
+
 }
