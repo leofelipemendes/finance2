@@ -17,6 +17,7 @@ class CreateEstadosTable extends Migration
             $table->increments('id');
             $table->string('sigla');
             $table->string('descricao');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

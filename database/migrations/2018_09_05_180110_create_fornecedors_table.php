@@ -22,15 +22,16 @@ class CreateFornecedorsTable extends Migration
             $table->foreign('iduf')->references('id')->on('estados');
             $table->integer('idmunicipio')->unsigned();
             $table->foreign('idmunicipio')->references('id')->on('municipios');
-            $table->biginteger('ie')->nullable();;
-            $table->biginteger('im')->nullable();;
-            $table->boolean('matriz')->nullable();;
-            $table->string('endereco')->nullable();;
-            $table->string('bairro')->nullable();;
-            $table->string('numero')->nullable();;
+            $table->biginteger('ie')->nullable();
+            $table->biginteger('im')->nullable();
+            $table->boolean('matriz')->nullable();
+            $table->string('endereco')->nullable();
+            $table->string('bairro')->nullable();
+            $table->string('numero')->nullable();
             $table->string('complemento')->nullable();
-            $table->string('contato')->nullable();;
-            $table->string('tel_contato')->nullable();;
+            $table->string('contato')->nullable();
+            $table->string('tel_contato')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

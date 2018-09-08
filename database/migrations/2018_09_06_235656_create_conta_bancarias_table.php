@@ -23,6 +23,7 @@ class CreateContaBancariasTable extends Migration
             $table->integer('dig_conta');
             $table->integer('tipo_conta');
             $table->boolean('ativo');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

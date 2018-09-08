@@ -118,7 +118,7 @@ class CentroCustoController extends Controller
         $cc = CentroCusto::find($id);
         try{
             if(!empty($cc)){
-                $cc->delete();
+                CentroCusto::destroy($id);
                 return response()->json([
                     'status'=>'success',
                     'msg'=>'Cliente removido'

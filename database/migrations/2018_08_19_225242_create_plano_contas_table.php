@@ -17,6 +17,7 @@ class CreatePlanoContasTable extends Migration
             $table->increments('id');
             $table->string('name',100);
             $table->string('descricao',150);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

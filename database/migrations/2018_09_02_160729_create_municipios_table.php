@@ -19,7 +19,7 @@ class CreateMunicipiosTable extends Migration
             $table->string('nome');
             $table->string('uf');
             $table->integer('iduf')->nullable();
-            
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -3,9 +3,11 @@
 namespace finance;
 
 use Illuminate\Database\Eloquent\Model;
-
+use \Illuminate\Database\Eloquent\SoftDeletes;
 class Municipio extends Model {
 
+    Use SoftDeletes;
+    
     protected $fillable = [
         'codigo',
         'nome',

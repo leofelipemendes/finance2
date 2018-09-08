@@ -121,7 +121,7 @@ class CategoriaController extends Controller
         $cat = Categoria::find($id);
         if(!empty($cat)){
             try{            
-            $cat->delete();
+            Categoria::destroy($id);
                 return response()->json([
                     'status'=>'success',
                     'msg'=>'Registro removido.'

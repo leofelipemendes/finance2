@@ -32,6 +32,7 @@ class CreateClientesTable extends Migration
             $table->integer('tel_out')->nullable();
             $table->string('contato')->nullable();
             $table->string('email')->nullable()->unique();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

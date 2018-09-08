@@ -125,7 +125,7 @@ class BancoController extends Controller {
         $bc = Banco::find($id);
         if (!empty($bc)) {
             try {
-                $bc->delete();
+                Banco::destroy($id);
                 return response()->json([
                             'status' => 'success',
                             'msg' => 'Registro removido.'

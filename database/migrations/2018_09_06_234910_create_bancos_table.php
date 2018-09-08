@@ -17,7 +17,8 @@ class CreateBancosTable extends Migration
             $table->increments('id');
             $table->integer('codigo');
             $table->string('nome');
-            $table->string('site');            
+            $table->string('site');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

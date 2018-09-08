@@ -127,7 +127,7 @@ class ClientesController extends Controller {
     public function destroy($id) {
         $cliente = Cliente::find($id);
         try{
-            $cliente->delete();
+            Cliente::destroy($id);
             return response()->json([
                 'status'=>'success',
                 'msg'=>'Cliente removido'

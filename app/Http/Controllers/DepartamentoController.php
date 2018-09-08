@@ -115,7 +115,7 @@ class DepartamentoController extends Controller
     {
         $dept = Departamento::find($id);
         try {
-            $dept->delete();
+            Departamento::destroy($id);
             return response()->json([
                 'status'=>'success',
                 'msg'=>'Departamento removido com sucesso.'

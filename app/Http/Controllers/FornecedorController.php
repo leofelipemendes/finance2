@@ -124,7 +124,7 @@ class FornecedorController extends Controller
     {
         $forn = Fornecedor::find($id);
         try{
-            $forn->delete();
+            Fornecedor::destroy($id);
             return response()->json([
                 'status'=>'success',
                 'msg'=>'Fornecedor removido'

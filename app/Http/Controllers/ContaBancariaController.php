@@ -126,7 +126,7 @@ class ContaBancariaController extends Controller {
         $cb = ContaBancaria::find($id);
         if (!empty($cb)) {
             try {
-                $cb->delete();
+                ContaBancaria::destroy($id);
                 return response()->json([
                             'status' => 'success',
                             'msg' => 'Registro removido.'
