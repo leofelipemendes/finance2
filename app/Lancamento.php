@@ -13,6 +13,7 @@ class Lancamento extends Model {
         , 'data_competencia'
         , 'data_vencimento'
         , 'valor'
+        , 'pago'
         , 'idfornecedor'
         , 'idcliente'
         , 'idcategoria'

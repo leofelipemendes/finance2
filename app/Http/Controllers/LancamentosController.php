@@ -40,6 +40,7 @@ class LancamentosController extends Controller
         $lanc->data_competencia = $request->input('data_competencia');
         $lanc->data_vencimento = $request->input('data_vencimento');
         $lanc->valor = $request->input('valor');
+        $lanc->pago = $request->input('pago');
         $lanc->idfornecedor = $request->input('idfornecedor');
         $lanc->idcliente = $request->input('idcliente');
         $lanc->idcategoria = $request->input('idcategoria');

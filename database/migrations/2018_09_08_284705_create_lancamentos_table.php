@@ -19,6 +19,7 @@ class CreateLancamentosTable extends Migration
             $table->date('data_competencia');
             $table->date('data_vencimento');
             $table->decimal('valor');
+            $table->boolean('pago');
             $table->integer('idfornecedor')->unsigned()->nullable();
             $table->integer('idcliente')->unsigned()->nullable();
             $table->integer('idcategoria')->unsigned();

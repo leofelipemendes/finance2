@@ -20,7 +20,8 @@ Route::group(['middleware' => 'jwt.auth'], function(){
 });
 Route::middleware('jwt.refresh')->get('/token/refresh', 'AuthController@refresh');
 Route::group(['middleware' => 'jwt.auth'], function(){
-  Route::get('auth/user', 'AuthController@user');
+  
+    Route::get('auth/user', 'AuthController@user');
   
     Route::resource('departamento','DepartamentoController');
     Route::resource('planocontas','PlanoContasController');
