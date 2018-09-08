@@ -22,7 +22,7 @@ class ContaBancariaController extends Controller {
         }
         return response()->json([
                     'status' => 'success',
-                    'msg' => 'Não há categorias cadastradas.'
+                    'msg' => 'Não há contas cadastradas.'
         ]);
     }
 
@@ -52,7 +52,7 @@ class ContaBancariaController extends Controller {
             return response()->json([
                         'status' => 'error',
                         'error' => $ex->getMessage(),
-                        'msg' => 'Erro ao cadastrar categoria.'
+                        'msg' => 'Erro ao cadastrar conta.'
             ]);
         }
     }
@@ -106,7 +106,7 @@ class ContaBancariaController extends Controller {
                 return response()->json([
                             'status' => 'error',
                             'error' => $ex->getMessage(),
-                            'msg' => 'Erro ao atualizar categoria.'
+                            'msg' => 'Erro ao atualizar conta.'
                 ]);
             }
         }
