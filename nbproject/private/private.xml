@@ -10,13 +10,9 @@
             <file>file:/C:/Users/Leo/Documents/Desenvolvimento/teste/novo/app/Http/Controllers/PlanoContasController.php</file>
         </group>
         <group>
-            <file>file:/home/leo/dev/finance2/app/Estado.php</file>
-            <file>file:/home/leo/dev/finance2/routes/api.php</file>
-            <file>file:/home/leo/dev/finance2/app/Departamento.php</file>
-            <file>file:/home/leo/dev/finance2/database/migrations/2018_09_06_210332_create_departamentos_table.php</file>
-            <file>file:/home/leo/dev/finance2/app/Http/Controllers/DepartamentoController.php</file>
-            <file>file:/home/leo/dev/finance2/app/Http/Controllers/FornecedorController.php</file>
-            <file>file:/home/leo/dev/finance2/database/migrations/2018_09_06_210519_create_centro_custos_table.php</file>
+            <file>file:/home/leo/dev/finance2/database/migrations/2018_09_06_235656_create_conta_bancarias_table.php</file>
+            <file>file:/home/leo/dev/finance2/app/ContaBancaria.php</file>
+            <file>file:/home/leo/dev/finance2/app/Http/Controllers/ContaBancariaController.php</file>
         </group>
     </open-files>
 </project-private>

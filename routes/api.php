@@ -21,17 +21,20 @@ Route::group(['middleware' => 'jwt.auth'], function(){
 Route::middleware('jwt.refresh')->get('/token/refresh', 'AuthController@refresh');
 Route::group(['middleware' => 'jwt.auth'], function(){
   Route::get('auth/user', 'AuthController@user');
+  
+    Route::resource('departamento','DepartamentoController');
+    Route::resource('planocontas','PlanoContasController');
+    Route::resource('forn','FornecedorController');
+    Route::resource('clientes','ClientesController');
+    Route::resource('categoria','CategoriaController');
+    Route::resource('ccusto','CentroCustoController');
+    Route::resource('banco','BancoController');
+    Route::resource('cbancaria','ContaBancariaController');
+    Route::resource('lancamentos','LancamentosController');
 });
 // --------- end login e auth
 
-Route::resource('departamento','DepartamentoController');
-Route::resource('planocontas','PlanoContasController');
-Route::resource('forn','FornecedorController');
-Route::resource('clientes','ClientesController');
-Route::resource('categoria','CategoriaController');
-Route::resource('ccusto','CentroCustoController');
-Route::resource('banco','BancoController');
-Route::resource('cbancaria','ContaBancariaController');
+
 
 
 

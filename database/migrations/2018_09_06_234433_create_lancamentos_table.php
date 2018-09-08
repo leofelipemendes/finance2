@@ -15,7 +15,25 @@ class CreateLancamentosTable extends Migration
     {
         Schema::create('lancamentos', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('descricao');
+            $table->date('data_competencia');
+            $table->date('data_vencimento');
+            $table->decimal('valor');
+            $table->integer('idfornecedor')->unsigned()->nullable();
+            $table->integer('idcliente')->unsigned()->nullable();
+            $table->integer('idcategoria')->unsigned();
+            $table->integer('idconta')->unsigned(); //conta (conta bancaria de saida eu entrada de fundos)
+            $table->integer('idcentrocusto')->unsigned();
+            $table->softDeletes();
             $table->timestamps();
+        });
+        
+        Schema::table('lancamentos', function (Blueprint $table) {
+            $table->foreign('idcategoria')->references('id')->on('categorias');
+            $table->foreign('idconta')->references('id')->on('contas_bancarias');
+            $table->foreign('idfornecedor')->references('id')->on('fornecedores');
+            $table->foreign('idcliente')->references('id')->on('clientes');
+            $table->foreign('idcentrocusto')->references('id')->on('centro_custos');
         });
     }
 
