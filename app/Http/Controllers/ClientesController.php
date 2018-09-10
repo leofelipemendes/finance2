@@ -13,8 +13,19 @@ class ClientesController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
+               
         $cliente = Cliente::all();
-        return response()->json($cliente);
+        if($cliente->isNotEmpty()){
+            return response()->json([
+                'status'=>'success',
+                'data'=>$cliente
+            ]);
+        }
+        return response()->json([
+                'status'=>'success',
+                'msg'=>'Nenhum registro encontrado.'
+            ]);
+        
     }
 
     /**

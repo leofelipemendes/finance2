@@ -15,7 +15,14 @@ class PlanoContasController extends Controller
     public function index()
     {
         $pcontas = PlanoContas::all();
-        return response()->json($pcontas);
+        if(($pcontas->isNotEmpty())){
+            return response()->json($pcontas);
+        }
+        return response()->json([
+            'status'=>'success',
+            'msg'=>'Nenhum registro encontrado.'
+        ]);
+        
     }
 
     /**

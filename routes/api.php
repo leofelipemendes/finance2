@@ -28,5 +28,6 @@ Route::resource('departamento','DepartamentoController');
 Route::resource('planocontas','PlanoContasController');
 Route::resource('forn','FornecedorController');
 Route::resource('clientes','ClientesController');
+Route::resource('ccusto','CentroCustoController');
 
 

@@ -2,12 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group name="Estudo">
-            <file>file:/C:/Users/Leo/Documents/Desenvolvimento/teste/novo/database/migrations/2018_09_01_015741_create_clientes_table.php</file>
-            <file>file:/C:/Users/Leo/Documents/Desenvolvimento/teste/novo/app/PlanoContas.php</file>
-            <file>file:/C:/Users/Leo/Documents/Desenvolvimento/teste/novo/app/Cliente.php</file>
-            <file>file:/C:/Users/Leo/Documents/Desenvolvimento/teste/novo/app/Http/Controllers/ClientesController.php</file>
-            <file>file:/C:/Users/Leo/Documents/Desenvolvimento/teste/novo/app/Http/Controllers/PlanoContasController.php</file>
-        </group>
+        <group name="Estudo"/>
     </open-files>
 </project-private>
