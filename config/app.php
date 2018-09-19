@@ -160,6 +160,8 @@ return [
         // finance\Providers\BroadcastServiceProvider::class,
         finance\Providers\EventServiceProvider::class,
         finance\Providers\RouteServiceProvider::class,
+        finance\Providers\RepositoryServiceProvider::class,
+        Prettus\Repository\Providers\RepositoryServiceProvider::class,
         
 
     ],
